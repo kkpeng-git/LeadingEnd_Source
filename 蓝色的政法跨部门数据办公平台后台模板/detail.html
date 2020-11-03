@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情界面</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.step.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <style>
+        .content-person ul li{float: left;width: 24%;height: 74px;background-color: #313c54;color: #9fa8bc;margin: 0 0.5%;position: relative;border-radius: 4px;cursor: pointer;margin-bottom: 10px}
+        .person-item{width: 100%;display: flex;height: 74px}
+        .person-pic{flex: 0 0 74px}
+        .person-text{flex: 1;position: absolute;left: 78px;top: 34px;font-size: 13px}
+        .person-icon{position: absolute;color:#ff791d;right: 10px;top: 10px}
+        .person-title p{line-height: 34px;border: 1px #313c54 solid;border-left: 4px #df5138 solid;display: inline-block;padding: 0 16px ;margin: 10px 0 10px 10px;border-radius: 4px}
+        .staff{margin-bottom: 40px}
+        .staff ul li{float: left;cursor: pointer;width: 16%;margin:0 2%;color: #9fa8bc;border: 1px #9fa8bc solid;border-radius: 4px;height: 150px;text-align: center;background-color:#313c54;margin-bottom: 10px }
+        .staff-pic{font-size: 80px;color:#ed4e2a}
+        .content-case ul li{float: left;width: 24%;height: 150px;background-color: #313c54;color: #9fa8bc;margin: 0 0.5%;border-radius: 4px;cursor: pointer;margin-bottom: 10px}
+        .case-text{font-size: 60px;color: #a0d468;display: flex;margin-top: 10px}
+        .case-text .fa-th-list{flex: 0 0 80px;text-align: right;margin-right: 8px}
+        .case-text-txt{flex:1;font-size: 22px;color: #9fa8bc;margin-top: 12px}
+        .texts{display: flex;text-align: center;margin-top: 6px}
+        .text-l,.text-r{flex: 1}
+        .text-l{line-height: 60px;border-right:1px #585858 solid;height: 60px }
+        .text-r{line-height: 32px}
+        .text-r p:last-child{color: red;font-weight:bold;}
+    </style>
+
+</head>
+<body style="overflow: hidden">
+<div class="detail-main">
+    <div class="detail-header">
+        <h2>徐从惠盗窃案处理材料</h2>
+        <p>
+            <span>案件编号</span>
+            <span>A412556554411010</span>
+        </p>
+    </div>
+    <div class="detail-flow">
+        <div id="step"></div>
+    </div>
+    <div class="content">
+        <div class="tabs">
+            <ul>
+                <li class="tabs-active">
+                    <span class="fa fa-bar-chart"></span>
+                    <span>案件概况</span>
+                </li>
+                <li>
+                    <span class="fa fa-users"></span>
+                    <span>涉案人员</span>
+                </li>
+                <li>
+                    <span class="fa fa-file-text-o"></span>
+                    <span>法律文书</span>
+                </li>
+                <li>
+                    <span class="fa fa-bar-chart"></span>
+                    <span>案件卷宗</span>
+                </li>
+                <li>
+                    <span class="fa fa-calendar-times-o"></span>
+                    <span>时间轴</span>
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="content-items">
+            <div class="content-item" style="display: block">
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">案件名称</div>
+                        <div class="item-right">徐从惠盗窃案处理材料</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">案件编号</div>
+                        <div class="item-right">A412556554411010</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">案件类别</div>
+                        <div class="item-right">盗窃案</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">案件性质</div>
+                        <div class="item-right">入室盗窃</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">法案区划</div>
+                        <div class="item-right">天河区</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">案发地点</div>
+                        <div class="item-right">天河区</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">案件文号</div>
+                        <div class="item-right">---</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">案发时间</div>
+                        <div class="item-right">2018-08-15  14:49</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">简要案情</div>
+                        <div class="item-right">--</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="content-item">
+                <div class="content-person">
+                    <div class="person-title">
+                        <p>犯罪嫌疑人</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+
+                    <div class="person-title">
+                        <p>受害人</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="person-item">
+                                <div class="person-pic">
+                                    <img src="img/person.png"/>
+                                </div>
+                                <div class="person-text">
+                                    <p>张三</p>
+                                    <p>513701199205027310</p>
+                                </div>
+                            </div>
+                            <div class="person-icon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-item">
+                <div class="staff">
+                    <ul>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="staff-pic">
+                                    <span class="fa fa-file-text-o"></span>
+                                </div>
+                                <div class="staff-text">
+                                    张三逮捕文书
+                                </div>
+                            </div>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-item">
+                <div class="content-case">
+                    <ul>
+                        <li>
+                            <div class="case-item">
+                                <div class="case-text">
+                                    <span class="fa fa-th-list"></span>
+                                    <span class="case-text-txt">诉讼文书卷宗</span>
+                                </div>
+                                <div class="texts">
+                                    <div class="text-l">证据文书卷</div>
+                                    <div class="text-r">
+                                        <p>文件</p>
+                                        <p>18</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="case-item">
+                                <div class="case-text">
+                                    <span class="fa fa-th-list"></span>
+                                    <span class="case-text-txt">诉讼文书卷宗</span>
+                                </div>
+                                <div class="texts">
+                                    <div class="text-l">证据文书卷</div>
+                                    <div class="text-r">
+                                        <p>文件</p>
+                                        <p>18</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="case-item">
+                                <div class="case-text">
+                                    <span class="fa fa-th-list"></span>
+                                    <span class="case-text-txt">诉讼文书卷宗</span>
+                                </div>
+                                <div class="texts">
+                                    <div class="text-l">证据文书卷</div>
+                                    <div class="text-r">
+                                        <p>文件</p>
+                                        <p>18</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="case-item">
+                                <div class="case-text">
+                                    <span class="fa fa-th-list"></span>
+                                    <span class="case-text-txt">诉讼文书卷宗</span>
+                                </div>
+                                <div class="texts">
+                                    <div class="text-l">证据文书卷</div>
+                                    <div class="text-r">
+                                        <p>文件</p>
+                                        <p>18</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-item">
+                <div id="timeline">
+                    <div class="timeline-item" style="padding: 10px">
+
+                        <div class="timeline-icon" style="width: 70px;left:49%;background-color: #2582cb;color: #fff;text-align: center;height: 36px;line-height:36px;border-radius: 4px">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <span>当前</span>
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区检察院</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区侦查内勤</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>2018-08-16  09:26</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区检察院</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time-right">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content right">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time-right">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content right">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time-right">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content right">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="img/person.png">
+                        </div>
+                        <div class="time">
+                            <p><span class="glyphicon glyphicon-time"></span><span>23小时前</span></p>
+                            <p>2018-08-16  10:45</p>
+                        </div>
+                        <div class="timeline-content">
+                            <p>逮捕分配</p>
+                            <div class="text-content text-content1">
+                                <div>
+                                    <label>提交人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>提交单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div>
+                                    <label>签收人：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收时间：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                                <div>
+                                    <label>签收单位：</label>
+                                    <span>天河区案管</span>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="plugin/jquery/jQuery-2.2.0.min.js"></script>
+<script src="js/jquery.step.min.js"></script>
+<script src="js/detail.js"></script>
+<script>
+    var $step = $("#step");
+    var $index = $("#index");
+    $step.step({
+        index: 2,
+        time: 500,
+        title: ["批准逮捕", "检察院收案", "逮捕审查", "批准逮捕", "移送起诉"]
+    });
+    $(function(){
+        tabs();
+        person();
+        staff();
+        contentCase()
+    });
+    function tabs(){
+        $(".tabs ul li").each(function(index){
+            $(this).click(function(){
+                $(this).addClass("tabs-active").siblings("li").removeClass("tabs-active");
+                $(".content-items .content-item").eq(index).slideDown().siblings("div").hide();
+                    if(index == 4){
+                        $(".detail-main").animate({scrollTop: '185px'}, 800);
+
+                    }else{
+                        $(".detail-main").animate({scrollTop: '0px'}, 800);
+                    }
+
+
+            })
+        })
+    }
+    function person(){
+        $(".content-person ul li").each(function(){
+            $(this).click(function(){
+                personTail()
+            })
+        })
+    }
+    function staff(){
+        $(".staff ul li").each(function(){
+            $(this).click(function(){
+                staffTail()
+            })
+        })
+    }
+    function contentCase(){
+        $(".content-case ul li").each(function(){
+            $(this).click(function(){
+                caseTail()
+            })
+        })
+    }
+    function personTail() {
+        var Name = "人员信息";
+        var Href = "personTail.html";
+        var data_id = $("#add").attr('data-id');
+        window.parent.$.learuntab.myAddTab(Name, Href, data_id);
+    }
+    function staffTail() {
+        var Name = "法律文书";
+        var Href = "staffTail.html";
+        var data_id = $("#add").attr('data-id');
+        window.parent.$.learuntab.myAddTab(Name, Href, data_id);
+    }
+    function caseTail() {
+        var Name = "卷宗信息";
+        var Href = "caseTail.html";
+        var data_id = $("#add").attr('data-id');
+        window.parent.$.learuntab.myAddTab(Name, Href, data_id);
+    }
+</script>
+</html>

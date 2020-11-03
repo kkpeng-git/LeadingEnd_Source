@@ -1,0 +1,28 @@
+.inputBox{
+    position: relative;
+    width: 100%;
+    z-index: 999;
+}
+.inputBox>input{
+    width: 98%;
+    border:1px solid #999999;
+    border-radius: 5px;
+    text-indent: 1em;
+    margin: 0 auto;
+    height: 30px;
+}
+.inputBox>div{
+    width: 98%;
+    position: absolute;
+    background-color: #999999;
+    height: 200px;
+    overflow: auto;
+
+}
+.inputFindInput{
+    width: 98%;
+    margin-left: 1%;
+    border:1px solid #cccccc;
+    background-color: transparent;
+    text-indent: 1em;
+}

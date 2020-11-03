@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人员信息</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <style>
+        /**************************************滚动条样式**************************************/
+
+        ::-webkit-scrollbar-track{border-radius: 10px;-webkit-box-shadow: inset 0 0 6px #2b364f;}
+        ::-webkit-scrollbar-thumb{background-color: #2b364f;border-radius: 10px;-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);}
+        ::-webkit-scrollbar-thumb{background-color: #2b364f;border-radius: 10px;-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);}
+        ::-webkit-scrollbar{width: 16px;height: 16px;}
+        ::-webkit-scrollbar-track,
+        ::-webkit-scrollbar-thumb{border-radius: 999px;border: 5px solid transparent;}
+        ::-webkit-scrollbar-track{box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;}
+        ::-webkit-scrollbar-thumb{min-height: 20px;background-clip: content-box;box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;}
+        ::-webkit-scrollbar-corner{background: transparent;}
+
+        *,h6{padding: 0;margin: 0}
+        ul{list-style: none}
+        .clear{clear: both}
+        .person-tail{width: 60%;margin: 0 auto ;padding-bottom: 40px}
+        .person-tail h6{text-align: center;line-height: 42px;font-size: 18px;color: #fff}
+        .name{width: 100px;text-align: center}
+        .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{border-color:#a1a7b2 }
+    </style>
+</head>
+<body style="background-color: #232a3b;margin: 0 10px;color: #a1a7b2">
+<div class="person-tail">
+    <h6>张三信息表</h6>
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <td class="name">嫌疑依据</td>
+            <td colspan="2"></td>
+            <td rowspan="8" colspan="2" style="width: 40%;font-size: 200px;text-align: center;margin-top: 10px;color: #3f4e74;">
+                <span class="glyphicon glyphicon-user"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="name">人员类型</td>
+            <td colspan="2">犯罪嫌疑人</td>
+        </tr>
+        <tr>
+            <td class="name">姓  名</td>
+            <td colspan="2">张三</td>
+        </tr>
+        <tr>
+            <td class="name">别  名</td>
+            <td colspan="2">老张</td>
+        </tr>
+        <tr>
+            <td class="name">绰  号</td>
+            <td colspan="2">小三</td>
+
+        </tr>
+        <tr>
+            <td class="name">性  别</td>
+            <td colspan="2">男</td>
+
+        </tr>
+        <tr>
+            <td class="name">出生日期</td>
+            <td colspan="2">1990-12-01</td>
+
+        </tr>
+        <tr>
+            <td class="name">身份证号</td>
+            <td colspan="2">520102199012012543</td>
+
+        </tr>
+        <tr>
+            <td class="name">民  族</td>
+            <td>汉族</td>
+            <td class="name">婚  否</td>
+            <td>丧偶</td>
+        </tr>
+        <tr>
+            <td class="name">联系电话</td>
+            <td>13825461440</td>
+            <td class="name">文化程度</td>
+            <td>文盲</td>
+        </tr>
+        <tr>
+            <td class="name">政治面貌</td>
+            <td>团员</td>
+            <td class="name">职  务</td>
+            <td>清洁工</td>
+        </tr>
+        <tr>
+            <td class="name">职  业</td>
+            <td>工人</td>
+            <td class="name">特殊身份</td>
+            <td>未成年人</td>
+        </tr>
+        <tr>
+            <td class="name">宗教信仰</td>
+            <td>天主教</td>
+            <td class="name">口  音</td>
+            <td>贵阳</td>
+        </tr>
+        <tr>
+            <td class="name">籍贯国籍</td>
+            <td>中国</td>
+            <td class="name">出生区划</td>
+            <td>贵州贵阳市</td>
+        </tr>
+        <tr>
+            <td class="name">出生住址</td>
+            <td>贵阳市云岩区阳明祠东山岭</td>
+            <td class="name">户籍区划</td>
+            <td>贵州贵阳市</td>
+        </tr>
+        <tr>
+            <td class="name">户籍住址</td>
+            <td>贵州省贵阳市云岩区</td>
+            <td class="name">联系电话</td>
+            <td>联系电话联系电话</td>
+        </tr>
+        <tr>
+            <td class="name">现住区划</td>
+            <td>贵州省贵阳市</td>
+            <td class="name">现住地址</td>
+            <td>贵州省贵阳市南明区龙洞堡</td>
+        </tr>
+
+
+        <tr>
+            <td class="name">工作单位</td>
+            <td>甭鸟先锋科技有限公司</td>
+            <td class="name">单位地址</td>
+            <td>贵阳市南明区龙洞堡龙水路1200号</td>
+        </tr>
+        <tr>
+            <td class="name">QQ号码</td>
+            <td>212131212</td>
+            <td class="name">电子邮箱</td>
+            <td>3434343@qq.com</td>
+        </tr>
+        <tr>
+            <td class="name">身  高</td>
+            <td>175 厘米</td>
+            <td class="name">血  型</td>
+            <td>O 型</td>
+        </tr>
+        <tr>
+            <td class="name">体  型</td>
+            <td>特胖</td>
+            <td class="name">体  重</td>
+            <td>88 公斤</td>
+        </tr>
+        <tr>
+            <td class="name">足  长</td>
+            <td>26 厘米</td>
+            <td class="name">鞋  号</td>
+            <td>39</td>
+        </tr>
+
+        <tr>
+            <td class="name">是否会驾驶</td>
+            <td>是</td>
+            <td class="name">是否上网</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td class="name">备注</td>
+            <td colspan="3">大坏人</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

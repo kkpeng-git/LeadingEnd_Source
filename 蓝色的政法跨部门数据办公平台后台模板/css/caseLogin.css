@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.logginBox{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../img/loginBg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.caseLogin_top{
+    width: 100%;
+    height: 12%;
+    background-image: url("../img/loginTop.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.caselog{
+    width: 30%;
+  margin: 0 auto;
+
+}
+.caselog img{
+    width: 100%;
+    margin-top: 4%;
+}
+.loginCon{
+    width: 80%;
+    margin: 5% auto;
+    height: 60%;
+}
+.loginLeft{
+    width: 62%;
+    height: 100%;
+
+    background-image: url("../img/loginLeft.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  margin: 0 auto;
+    position: relative;
+}
+.loginRight{
+    width: 62%;
+    height: 68%;
+    background-image: url("../img/lgonRight.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 19%;
+    top:10%
+}
+.userLogin{
+    width: 100%;
+    height: 13%;
+    background-image: url("../img/userLogin.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+.loginGroup{
+    width: 86%;
+    margin: 5% auto;
+}
+.loginGroup label{
+    width: 15%;
+    display: inline-block;
+    color: #d8dfe2;
+    font-size: 1em;
+    text-align: right;
+    margin-right: 3%;
+}
+.loginInput{
+    width: 61%;
+    height: 40px;
+    background-image: url("../img/loginInput.png");
+    border:none;
+    background-color: transparent;
+    color: #eeeeee;
+    text-indent: 1em;
+}
+.loginInput01{
+    width: 65%;
+    height: 40px;
+    background-image: url("../img/loginInput.png");
+    border:none;
+    background-color: transparent;
+    color: #eeeeee;
+    text-indent: 1em;
+}
+.loginBut01{
+  width: 4%;
+    height: 40px;
+    background-image: url("../img/inputbut01.png");
+    border:none;
+    position: relative;
+    top:16px;
+    background-size: 100% 100%;
+    background-color: transparent;
+    opacity: 0.8;
+
+}
+.loginBut02{
+    width: 60%;
+    height: 40px;
+    background-image: url("../img/loginBut02.png");
+  margin-left: 20%;
+    border:none;
+    font-size: 1.125em;
+    color: #333333;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+.loginFoot{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 0.85em;
+    color: #eeeeee;
+    text-align: center;
+}
+.user_ul{
+    position: absolute;
+    width: 56%;
+    list-style: none;
+    background-color: #afb8c7;
+    color: #666;
+    font-size: 12px;
+    left: 22.5%;
+    display: none;
+}
+.user_ul li{
+    width: 96%;
+    margin-left: 2%;
+    padding: 5px 0;
+}
+.user_ul li:last-child{
+    border-top:1px solid rgba(102, 102, 102, 0.55);
+    text-align: center;
+    color: #999999;
+}

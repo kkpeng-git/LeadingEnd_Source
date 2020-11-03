@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>部门信息</title>
+    <link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/lawContent.css">
+</head>
+<body class="case_tail_body">
+<form class="userform">
+ <fieldset class="fileset_div">
+     <legend>基本信息</legend>
+     <table class="formTable">
+         <tr><td class="formTd1">机构编号<span class="mustRed">*</span></td>
+         <td><input type="text" required minlength="2"></td>
+             <td colspan="2" rowspan="7" class="formImg"><img src="img/user2-160x160.jpg"> </td>
+         </tr>
+         <tr><td class="formTd1">机构自编号<span class="mustRed">*</span></td><td><input type="text" required></td></tr>
+         <tr><td class="formTd1">机构名称<span class="mustRed">*</span></td><td><input type="password" required></td></tr>
+         <tr><td class="formTd1">单位类型</td><td><select><option>xxx</option></select></td></tr>
+         <tr><td class="formTd1">行政区域</td><td><select><option>xxx</option></select></td></tr>
+         <tr><td class="formTd1">单位上级</td><td><select><option>xxx</option></select></td></tr>
+         <tr><td class="formTd1">照片</td><td><input type="text" placeholder="请选择一个图片文件" style="width: 60%"><button class="fileButton1"></button></td></tr>
+     </table>
+ </fieldset>
+
+    <fieldset class="fileset_div">
+        <legend>其它信息</legend>
+        <table class="formTable">
+
+
+            <tr><td class="formTd1">联系电话<span class="mustRed">*</span></td><td><input type="text" required></td><td class="formTd1">详情地址<span class="mustRed">*</span></td><td><input type="text" required></td></tr>
+            <tr><td class="formTd1">单位传真</td><td><input type="text"></td><td class="formTd1">单位邮编</td><td><input type="text" ></td></tr>
+            <tr><td class="formTd1">启用时间</td><td><input type="text" id="date1"></td><td class="formTd1">截至时间</td><td><input type="text" id="date2"></td></tr>
+
+            <tr><td class="formTd1">是否撤销</td><td><span>是</span><input type="radio" name="sex" checked>
+               <span>否</span><input type="radio" name="sex" ></td><td class="formTd1"></td></tr>
+        </table>
+    </fieldset>
+    <div class="left button_p"><button class="case_tail_sum"></button><button class="case_tail_close"></button></div>
+</form>
+
+<script src="js/jquery/jQuery-2.2.0.min.js"></script>
+<script type="text/javascript" src="plugin/ztree/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="plugin/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="plugin/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script src="js/action/caseDtail.js"></script>
+<script type="text/javascript" src="plugin/date/js/laydate.js"></script>
+<script>
+    !function(){
+        laydate.skin('danlan');//切换皮肤，请查看skins下面皮肤库
+        laydate({elem: '#date1'});//绑定元素
+        laydate({elem: '#date2'});//绑定元素
+        laydate({elem: '#date3'});//绑定元素
+    }();
+</script>
+</body>
+</html>

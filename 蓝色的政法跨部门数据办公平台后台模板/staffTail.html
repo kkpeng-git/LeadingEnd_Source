@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>法律文书</title>
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css">
+    <style>
+
+        *{padding: 0;margin: 0}
+        html,body{height: 100%;width: 100%;overflow: hidden}
+        .staff-tail{display: flex;height: 100%}
+        .staff-tail-left{flex: 0 0 300px}
+        .staff-tail-right{flex: 1}
+        .case_tail_body{
+            background-color: #232a3b;
+        }
+    </style>
+</head>
+<body class="case_tail_body">
+<div class="staff-tail">
+    <div class="staff-tail-left">
+        <p><ul  id="treeDemo" class="ztree"></ul></p>
+    </div>
+    <div class="staff-tail-right" style="height: 100%;overflow: hidden">
+         <iframe width="100%" height="100%" src="pdf.html" frameborder="0"  style="background:transparent;overflow: hidden"></iframe>
+    </div>
+
+</div>
+<script src="js/jquery/jQuery-2.2.0.min.js"></script>
+<script src="plugin/ztree/jquery.ztree.core-3.5.js"></script>
+<script src="plugin/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script src="plugin/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script src="js/action/fileLook.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>后台管理系统</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <style>
+        .layui-layer-rim{background-color: #333948 !important;border-color: #333948 !important;}
+        h1{color: #fff;text-align: center}
+        .layui-layer-content{height: 92% !important;overflow-y: auto}
+        .layui-layer-title{background-color: #292f3d !important;border-bottom: 1px #292f3d solid !important;color: #bac2d5 !important;display: inline-block;border-radius: 20px !important;height: 26px !important;line-height: 26px !important;padding: 0 20px !important;}
+    </style>
+</head>
+<body>
+<h1>后台管理系统</h1>
+<button type="button" onclick="detail()">详情界面</button>
+</body>
+<script src="plugin/jquery/jQuery-2.2.0.min.js"></script>
+<script src="plugin/layer_v2.1/layer/layer.js"></script>
+<script>
+    function detail(){
+        layer.open({
+            type: 2,
+            title: '案件详情界面',
+            shade: 0.5,
+            skin: 'layui-layer-rim',
+            area: ['80%', '80%'],
+            shadeClose: true,
+            closeBtn: 2,
+            content: 'detail.html'
+        })
+    }
+</script>
+</html>

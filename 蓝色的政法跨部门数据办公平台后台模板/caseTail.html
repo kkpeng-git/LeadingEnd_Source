@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卷宗信息</title>
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+
+    <style>
+        /**************************************滚动条样式**************************************/
+
+        ::-webkit-scrollbar-track{border-radius: 10px;-webkit-box-shadow: inset 0 0 6px #2b364f;}
+        ::-webkit-scrollbar-thumb{background-color: #2b364f;border-radius: 10px;-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);}
+        ::-webkit-scrollbar-thumb{background-color: #2b364f;border-radius: 10px;-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);}
+        ::-webkit-scrollbar{width: 16px;height: 16px;}
+        ::-webkit-scrollbar-track,
+        ::-webkit-scrollbar-thumb{border-radius: 999px;border: 5px solid transparent;}
+        ::-webkit-scrollbar-track{box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;}
+        ::-webkit-scrollbar-thumb{min-height: 20px;background-clip: content-box;box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;}
+        ::-webkit-scrollbar-corner{background: transparent;}
+
+        *,h6{padding: 0;margin: 0}
+        ul{list-style: none}
+        .clear{clear: both}
+        .case-tail-content-last{display: none}
+        .content-case,.case-tail-content-last{border:1px #585858 solid;border-radius: 4px;margin-bottom: 20px}
+        .case-tail-content-last .content-case{border: none}
+
+        .case-tail-content-last h6 span{margin:0 0 0 10px;cursor: pointer}
+        .content-case h6,.case-tail-content-last h6{line-height: 32px;padding-left: 0.5%;color: #9fa8bc;background-color: #333948;margin-bottom: 10px;border-bottom: 1px #585858 solid}
+
+       .content-case-ztree ul li,.content-case-right ul li{float: left;width: 24%;height: 150px;background-color: #313c54;color: #9fa8bc;margin: 0 0.5%;border-radius: 4px;cursor: pointer;margin-bottom: 10px}
+        .case-text{font-size: 60px;color: #a0d468;display: flex;margin-top: 10px}
+        .case-text .fa-th-list{flex: 0 0 80px;text-align: right;margin-right: 8px}
+
+
+        .case-text-txt{flex:1;font-size: 22px;color: #9fa8bc;margin-top: 12px}
+        .texts{display: flex;text-align: center;margin-top: 6px}
+        .text-l,.text-r{flex: 1}
+        .text-l{line-height: 60px;border-right:1px #585858 solid;height: 60px }
+
+
+
+        .text-r{line-height: 32px}
+        .text-r p:last-child{color: red;font-weight:bold;}
+        .case-add{margin:0 10px 10px 20px}
+        .case-add>div{display: inline-block;color: #9fa8bc}
+        .case-add>div label{font-size: 14px}
+        .case-add>div input{height: 30px;border: 1px #9fa8bc solid;background: #313c54;border-radius: 4px;margin-right: 10px;padding-left: 6px}
+        .case-add>div button{height: 28px;line-height: 28px;padding: 0 8px}
+        .case-tail-content-last .content-case{display: flex}
+        .content-case-left{flex: 0 0 300px}
+        .content-case-right{flex: 1}
+        .staff{margin-bottom: 40px}
+        .staff ul li{float: left;cursor: pointer;width: 16%;margin:0 2%;border: 1px #9fa8bc solid;border-radius: 4px;height: 150px;text-align: center;background-color:#313c54;margin-bottom: 10px }
+        .staff-pic{font-size: 80px;}
+    </style>
+</head>
+<body style="background-color: #232a3b;margin: 0 10px">
+<div class="case-tail-content">
+    <div class="content-case content-case-ztree ">
+        <h6>新建卷宗</h6>
+        <div class="case-add">
+            <div class="">
+                <label>卷宗类型：</label>
+                <input type="">
+            </div>
+            <div class="">
+                <label>卷宗名称：</label>
+                <input type="" id="name">
+            </div>
+            <div class="">
+                <label>备注：</label>
+                <input type="">
+            </div>
+            <div>
+                <button type="button" class="btn btn-success" onclick="caseAdd()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    保存
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="content-case content-case-ztree" id="content-case">
+        <h6>卷宗列表</h6>
+        <ul class="content-case-ul">
+            <li>
+                <div class="case-item">
+                    <div class="case-text">
+                        <span class="fa fa-th-list"></span>
+                        <span class="case-text-txt">诉讼文书卷宗</span>
+                    </div>
+                    <div class="texts">
+                        <div class="text-l">证据文书卷</div>
+                        <div class="text-r">
+                            <p>文件</p>
+                            <p>18</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="case-item">
+                    <div class="case-text">
+                        <span class="fa fa-th-list"></span>
+                        <span class="case-text-txt">诉讼文书卷宗</span>
+                    </div>
+                    <div class="texts">
+                        <div class="text-l">证据文书卷</div>
+                        <div class="text-r">
+                            <p>文件</p>
+                            <p>18</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="case-item">
+                    <div class="case-text">
+                        <span class="fa fa-th-list"></span>
+                        <span class="case-text-txt">诉讼文书卷宗</span>
+                    </div>
+                    <div class="texts">
+                        <div class="text-l">证据文书卷</div>
+                        <div class="text-r">
+                            <p>文件</p>
+                            <p>18</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="case-item">
+                    <div class="case-text">
+                        <span class="fa fa-th-list"></span>
+                        <span class="case-text-txt">诉讼文书卷宗</span>
+                    </div>
+                    <div class="texts">
+                        <div class="text-l">证据文书卷</div>
+                        <div class="text-r">
+                            <p>文件</p>
+                            <p>18</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="case-tail-content case-tail-content-last">
+    <h6>
+        卷宗详情
+
+        <span class="glyphicon glyphicon-backward" onclick="back()"></span>
+        返回
+    </h6>
+    <div class="content-case ">
+
+        <div class="content-case-left">
+            <p><ul  id="treeDemo" class="ztree"></ul></p>
+        </div>
+        <div class="content-case-right">
+            <div class="staff">
+                <ul id="staff">
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第一页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第二页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第三页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第四页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="staff-pic">
+                            <span class="fa fa-file-text-o"></span>
+                        </div>
+                        <div class="staff-text">
+                            五
+                        </div>
+                    </div>
+                </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第六页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第七页
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第八页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第九页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第十页
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="staff-pic">
+                                <span class="fa fa-file-text-o"></span>
+                            </div>
+                            <div class="staff-text">
+                                第十一页
+                            </div>
+                        </div>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="plugin/jquery/jQuery-2.2.0.min.js"></script>
+<script src="plugin/ztree/jquery.ztree.core-3.5.js"></script>
+<script src="plugin/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script src="plugin/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script src="js/action/fileLook.js"></script>
+<script>
+    $(function(){
+        change();
+        staff()
+    });
+    function change(){
+        $(".content-case-ul li").each(function(){
+            $(this).click(function(){
+                $(".case-tail-content-last").show().siblings("div").hide()
+            })
+        })
+    }
+    function caseAdd(){
+        if($("#name").val()){
+            var html = '<li>'+
+                    '<div class="case-item">'+
+                    '<div class="case-text">'+
+                    '<span class="fa fa-th-list"></span>'+
+                    '<span class="case-text-txt">'+$("#name").val()+'</span>'+
+                    '</div>'+
+                    '<div class="texts">'+
+                    '<div class="text-l">证据文书卷</div>'+
+                    '<div class="text-r">'+
+                    '<p>文件</p>'+
+                    '<p>0</p>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</li>';
+            $("#content-case ul").append(html)
+        }else{
+            alert("请输入卷宗名称")
+        }
+    }
+    function back(){
+        $(".case-tail-content-last").hide().siblings("div").show()
+    }
+    function staff(){
+        $("#staff li").each(function(){
+            $(this).click(function(){
+               var height =  window.screen.height;
+                var width =  window.screen.width;
+                window.open('fa.html', '_blank', 'height='+height+', width='+width+', top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')
+            })
+        })
+    }
+</script>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通知详情</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.step.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <style>
+        .content-person ul li{float: left;width: 24%;height: 74px;background-color: #313c54;color: #9fa8bc;margin: 0 0.5%;position: relative;border-radius: 4px;cursor: pointer;margin-bottom: 10px}
+        .person-item{width: 100%;display: flex;height: 74px}
+        .person-pic{flex: 0 0 74px}
+        .person-text{flex: 1;position: absolute;left: 78px;top: 34px;font-size: 13px}
+        .person-icon{position: absolute;color:#ff791d;right: 10px;top: 10px}
+        .staff{margin-bottom: 40px}
+        .staff ul li{float: left;cursor: pointer;width: 16%;margin:0 2%;border: 1px #9fa8bc solid;border-radius: 4px;height: 150px;text-align: center;background-color:#313c54;margin-bottom: 10px }
+        .staff-pic{font-size: 80px;}
+        .content-case ul li{float: left;width: 24%;height: 150px;background-color: #313c54;color: #9fa8bc;margin: 0 0.5%;border-radius: 4px;cursor: pointer;margin-bottom: 10px}
+        .case-text{font-size: 60px;color: #a0d468;display: flex;margin-top: 10px}
+        .case-text .fa-th-list{flex: 0 0 80px;text-align: right;margin-right: 8px}
+        .case-text-txt{flex:1;font-size: 22px;color: #9fa8bc;margin-top: 12px}
+        .texts{display: flex;text-align: center;margin-top: 6px}
+        .text-l,.text-r{flex: 1}
+        .text-l{line-height: 60px;border-right:1px #585858 solid;height: 60px }
+        .text-r{line-height: 32px}
+        .text-r p:last-child{color: red;font-weight:bold;}
+    </style>
+
+</head>
+<body style="overflow: hidden">
+<div class="detail-main">
+
+
+    <div class="content">
+
+        <div class="content-items">
+            <div class="content-item" style="display: block">
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">编号</div>
+                        <div class="item-right">xxxxxxxx</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">标题</div>
+                        <div class="item-right">A412556554411010</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">类别</div>
+                        <div class="item-right">公告</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">级别</div>
+                        <div class="item-right">一级</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">发布人</div>
+                        <div class="item-right">---</div>
+                    </div>
+                    <div class="items">
+                        <div class="item-left">发布时间</div>
+                        <div class="item-right">2018-08-15  14:49</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-row">
+                    <div class="items">
+                        <div class="item-left">内容</div>
+                        <div class="item-right">-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="plugin/jquery/jQuery-2.2.0.min.js"></script>
+<script src="js/jquery.step.min.js"></script>
+<script src="js/detail.js"></script>
+<script>
+    var $step = $("#step");
+    var $index = $("#index");
+    $step.step({
+        index: 2,
+        time: 500,
+        title: ["批准逮捕", "检察院收案", "逮捕审查", "批准逮捕", "移送起诉"]
+    });
+    $(function(){
+        tabs();
+        person();
+        staff();
+        contentCase()
+    });
+    function tabs(){
+        $(".tabs ul li").each(function(index){
+            $(this).click(function(){
+                $(this).addClass("tabs-active").siblings("li").removeClass("tabs-active");
+                $(".content-items .content-item").eq(index).slideDown().siblings("div").hide();
+                    if(index == 4){
+                        $(".detail-main").animate({scrollTop: '185px'}, 800);
+
+                    }else{
+                        $(".detail-main").animate({scrollTop: '0px'}, 800);
+                    }
+
+
+            })
+        })
+    }
+    function person(){
+        $(".content-person ul li").each(function(){
+            $(this).click(function(){
+                personTail()
+            })
+        })
+    }
+    function staff(){
+        $(".staff ul li").each(function(){
+            $(this).click(function(){
+                staffTail()
+            })
+        })
+    }
+    function contentCase(){
+        $(".content-case ul li").each(function(){
+            $(this).click(function(){
+                caseTail()
+            })
+        })
+    }
+    function personTail() {
+        var Name = "人员信息";
+        var Href = "personTail.html";
+        var data_id = $("#add").attr('data-id');
+        window.parent.$.learuntab.myAddTab(Name, Href, data_id);
+    }
+    function staffTail() {
+        var Name = "法律文书";
+        var Href = "staffTail.html";
+        var data_id = $("#add").attr('data-id');
+        window.parent.$.learuntab.myAddTab(Name, Href, data_id);
+    }
+    function caseTail() {
+        var Name = "卷宗信息";
+        var Href = "caseTail.html";
+        var data_id = $("#add").attr('data-id');
+        window.parent.$.learuntab.myAddTab(Name, Href, data_id);
+    }
+</script>
+</html>

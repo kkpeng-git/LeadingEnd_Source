@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="js/bstable/css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bstable/css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/lawContent.css">
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css">
+</head>
+<body>
+<div class="caseTable_find1">
+   <p class="p_line"><label>授权状态</label><span>所有</span><input type="radio" name="role" checked/><span>未授权</span><input type="radio" name="role"/><span>已授权</span><input type="radio" name="role"/><input type="text" placeholder="输入姓名" class="userFindInput"></p>
+    <p><label>类型</label><span>所有</span><input type="radio" name="type"><span>政法委</span><input type="radio" name="type"><span>公安</span><input type="radio" name="type"><span>法院</span><input type="radio" name="type"><span>检查院</span><input type="radio" name="type"></p>
+
+    </div>
+<div class="userLeft left">
+    <div class="caseTable_con_tit userTit">单位目录树</div>
+    <p><ul class="ztree" id="userZtree"></ul></p>
+
+</div>
+<div class="userRight right">
+    <div class="caseTable_con_tit left">
+        <ul class="caseTool_ul">
+    <li><i class="caseIcon01"></i>查看用户信息</li>
+    <li onclick="detail()"><i class="caseIcon02" ></i>新增</li>
+    <li><i class="caseIcon02"></i>修改</li>
+    <li><i class="caseIcon03"></i>授权</li>
+    <li><i class="caseIcon04"></i>删除</li>
+
+</ul>
+    </div>
+    <div class="left caseTable_style">
+        <table id="table"></table>
+    </div>
+</div>
+<script src="js/jquery/jQuery-2.2.0.min.js"></script>
+<script src="js/bstable/js/bootstrap.min.js"></script>
+<script src="js/bstable/js/bootstrap-table.js"></script>
+<script src="js/bstable/js/bootstrap-table-zh-CN.min.js"></script>
+
+<script src="plugin/ztree/jquery.ztree.core-3.5.js"></script>
+<script src="plugin/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script src="plugin/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script src="plugin/layer_v2.1/layer/layer.js"></script>
+<script src="js/action/userMangen.js"></script>
+<script src="js/action/ztree_d.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+    <link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/lawContent.css">
+</head>
+<body class="case_tail_body">
+<form class="userform">
+ <fieldset class="fileset_div">
+     <legend>基本信息</legend>
+     <table class="formTable">
+         <tr><td class="formTd1">用户编号（身份证号）<span class="mustRed">*</span></td>
+         <td><input type="text" required minlength="11"/></td>
+             <td colspan="2" rowspan="5" class="formImg"><img src="img/user2-160x160.jpg"> </td>
+         </tr>
+         <tr><td class="formTd1">登录名<span class="mustRed">*</span></td><td><input type="text" required minlength="2"></td></tr>
+         <tr><td class="formTd1">登录口令<span class="mustRed">*</span></td><td><input type="password" required minlenght="6"></td></tr>
+         <tr><td class="formTd1">真实姓名<span class="mustRed">*</span></td><td><input type="text" required minlenght="2"></td></tr>
+         <tr><td class="formTd1">照片</td><td><input type="text" placeholder="请选择一个图片文件" style="width: 60%"><button class="fileButton1"></button></td></tr>
+     </table>
+ </fieldset>
+    <fieldset class="fileset_div">
+        <legend>职位所属机构</legend>
+        <table class="formTable">
+
+            <tr><td class="formTd1">所属机构名称<span class="mustRed">*</span></td><td><input type="text" id="partNme" required/><div class="formPub" id="formPub">
+                <p><input type="text" placeholder="输入机构名称" ></p>
+                <p><ul class="ztree" id="userZtree"></ul></p>
+            </div></td><td class="formTd1">单位类型</td><td><select><option>xxxx</option></select></td></tr>
+
+        </table>
+    </fieldset>
+    <fieldset class="fileset_div">
+        <legend>其它基本信息</legend>
+        <table class="formTable">
+
+            <tr><td class="formTd1">性别</td><td><span>男</span><input type="radio" name="sex" checked>
+                <span>女</span><input type="radio" name="sex" ><span>未知</span><input type="radio" name="sex" ></td><td class="formTd1">出生日期<span class="mustRed">*</span></td><td><input type="text" id="date1" required></td></tr>
+            <tr><td class="formTd1">联系电话<span class="mustRed">*</span></td><td><input type="text" required minlength="8"></td><td class="formTd1">电子邮件</td><td><input type="text" email="true"></td></tr>
+            <tr><td class="formTd1">有效期起始日期</td><td><input type="text" id="date2"></td><td class="formTd1">有期截至日期</td><td><input type="text" id="date3"></td></tr>
+
+            <tr><td class="formTd1">用户状态</td><td><span>启用</span><input type="radio" name="sex" checked>
+               <span>未启用</span><input type="radio" name="sex" ></td><td class="formTd1"></td></tr>
+        </table>
+    </fieldset>
+    <div class="left button_p"><button class="case_tail_sum"></button><button class="case_tail_close"></button></div>
+</form>
+
+<script src="js/jquery/jQuery-2.2.0.min.js"></script>
+<script type="text/javascript" src="plugin/ztree/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="plugin/ztree/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="plugin/ztree/jquery.ztree.exedit-3.5.js"></script>
+<script src="js/action/caseDtail.js"></script>
+<script type="text/javascript" src="plugin/date/js/laydate.js"></script>
+<script src="js/ztreeBox.js"></script>
+<script>
+    !function(){
+        laydate.skin('danlan');//切换皮肤，请查看skins下面皮肤库
+        laydate({elem: '#date1'});//绑定元素
+        laydate({elem: '#date2'});//绑定元素
+        laydate({elem: '#date3'});//绑定元素
+    }();
+</script>
+</body>
+</html>
